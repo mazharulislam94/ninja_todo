@@ -1,5 +1,6 @@
 const addForm = document.querySelector('.add');
 const ul = document.querySelector('.todos');
+const searchForm = document.querySelector('.search');
 const search = document.querySelector('.search input');
 
 const generateTemplate = todo => {
@@ -42,4 +43,8 @@ const filterTodos = term => {
 search.addEventListener('keyup', () => {
   const term = search.value.trim().toLowerCase();
   filterTodos(term);
+});
+
+searchForm.addEventListener('submit', e => {
+  e.preventDefault();
 });
